@@ -13,6 +13,10 @@ cloudinary.config({
   api_secret: process.env.API_SECRET
 });
 
+app.get('/', (req, res) => {
+  res.send('Image Converter API Running')
+})
+
 app.post('/jpgtopng', (req, res) => {
   // blah blah convert image
   cloudinary.v2.uploader.upload(req.body.url, 
@@ -22,4 +26,4 @@ app.post('/jpgtopng', (req, res) => {
   );
 })
 
-app.listen(3000, () => console.log('Image Converter API running on port 3000!'))
+app.listen(6000, () => console.log('Image Converter API running on port 6000!'))
