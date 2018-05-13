@@ -26,4 +26,4 @@ app.post('/jpgtopng', (req, res) => {
   );
 })
 
-app.listen(6000, () => console.log('Image Converter API running on port 6000!'))
+app.listen(5000, () => console.log('Image Converter API running on port 5000!'))
