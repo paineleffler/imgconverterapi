@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/jpgtopng', (req, res) => {
+  if (!req.body.url) {
+    res.send('No image URL was provided.')
+    return
+  }
   // blah blah convert image
   cloudinary.v2.uploader.upload(req.body.url, 
     (error, result) => {
