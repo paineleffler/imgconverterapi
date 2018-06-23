@@ -25,7 +25,11 @@ app.post('/jpgtopng', (req, res) => {
   // blah blah convert image
   cloudinary.v2.uploader.upload(req.body.url, 
     (error, result) => {
-      res.send(cloudinary.image(result.public_id, { format: 'png', crop: 'scale', width: 0.5 }))
+      if (error) {
+        res.send('Error While Converting:', error)
+        return
+      }
+      if (result && result.public_id) res.send(cloudinary.image(result.public_id, { format: 'png', crop: 'scale', width: 0.5 }))
     }
   );
 })
