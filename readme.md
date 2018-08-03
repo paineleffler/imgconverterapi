@@ -2,6 +2,9 @@
 
 This uses Cloudinary.
 
+GET `/`
+Shows if it is running.
+
 POST `/jpgtopng`
 x-www-form-urlencoded
 url:http://i0.kym-cdn.com/photos/images/newsfeed/000/674/934/422.jpg
